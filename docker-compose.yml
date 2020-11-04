@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  test:
+    build: .
+    environment:
+      DISPLAY: "${DISPLAY:-:0}"
+    ipc: host
+    volumes:
+      - $HOME/.Xauthority:/home/me/.Xauthority
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/${UID:-1000}/pulse:/run/user/1000/pulse
