@@ -9,6 +9,8 @@ RUN  set -x \
     font-noto \
     libxcomposite \
     libx11 \
+    libva-intel-driver \
+    libvdpau \
     mesa-dri-intel \
     pulseaudio-utils \
     ttf-freefont \
