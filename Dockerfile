@@ -1,4 +1,4 @@
-FROM vidiben/rootless
+FROM vidiben/rootless:alpine-3.12
 
 LABEL fr.ben0.maintainer="Benoît Vidis"
 
