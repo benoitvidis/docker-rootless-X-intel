@@ -12,6 +12,7 @@ RUN  set -x \
     libva-intel-driver \
     libvdpau \
     mesa-dri-intel \
+    mesa-vdpau-gallium \
     pulseaudio-utils \
     ttf-freefont \
     ttf-liberation \
