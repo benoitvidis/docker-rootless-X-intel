@@ -17,7 +17,9 @@ RUN  set -x \
     ttf-freefont \
     ttf-liberation \
     ttf-opensans \
-    ttf-ubuntu-font-family
+    ttf-ubuntu-font-family \
+  && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+    libvdpau-va-gl
 
 COPY pulse-client.conf /etc/pulse/client.conf
 
