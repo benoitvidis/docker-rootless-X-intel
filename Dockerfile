@@ -9,8 +9,6 @@ RUN  set -x \
     font-noto \
     libxcomposite \
     libx11 \
-    libva-intel-driver \
-    libvdpau \
     mesa-dri-intel \
     mesa-vdpau-gallium \
     pulseaudio-utils \
@@ -18,8 +16,15 @@ RUN  set -x \
     ttf-liberation \
     ttf-opensans \
     ttf-ubuntu-font-family \
+  && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
+    libvdpau \
   && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-    libvdpau-va-gl
+    libva \
+    libvdpau-va-gl \
+  && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
+    libva-intel-driver \
+  \
+  && echo done
 
 COPY pulse-client.conf /etc/pulse/client.conf
 
