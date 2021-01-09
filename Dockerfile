@@ -9,6 +9,7 @@ RUN  set -x \
     font-noto \
     libxcomposite \
     libx11 \
+    libva-intel-driver \
     mesa-dri-intel \
     mesa-vdpau-gallium \
     pulseaudio-utils \
@@ -21,8 +22,6 @@ RUN  set -x \
   && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     libva \
     libvdpau-va-gl \
-  && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
-    libva-intel-driver \
   \
   && echo done
 
