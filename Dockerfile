@@ -1,28 +1,26 @@
-FROM vidiben/rootless:alpine-3.14
+FROM vidiben/rootless:ubuntu-20.04
 
 LABEL fr.ben0.maintainer="Benoît Vidis"
 
 USER root
 RUN  set -x \
   \
-  && apk add --no-cache \
-    font-noto \
-    font-ubuntu-nerd \
-    libxcomposite \
-    libx11 \
-    libva-intel-driver \
-    mesa-dri-intel \
-    mesa-vdpau-gallium \
+  && apt-get update  \
+  && apt-get install --no-install-recommends --no-install-suggests -y \
+    fonts-freefont-ttf \
+    fonts-liberation \
+    fonts-noto \
+    fonts-ubuntu \
+    intel-media-va-driver-non-free \
+    libxcomposite1 \
+    libx11-6 \
+    libva-x11-2 \
+    libvdpau1 \
+    libvdpau-va-gl1 \
+    mesa-vdpau-drivers \
     pulseaudio-utils \
-    ttf-freefont \
-    ttf-liberation \
-    ttf-opensans \
-  && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
-    libvdpau \
-  && apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
-    libva \
-    libvdpau-va-gl \
-  && echo done
+    vdpauinfo \
+  && rm -rf /var/lib/apt/lists/*
 
 COPY pulse-client.conf /etc/pulse/client.conf
 

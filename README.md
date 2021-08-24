@@ -1,3 +1,3 @@
-# X client lib & pulseaudio in an Alpine container
+# X client lib & pulseaudio in an Ubuntu container
 
 Intel drivers only included
